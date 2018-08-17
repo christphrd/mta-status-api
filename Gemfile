@@ -46,3 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for scraping
 gem 'nokogiri'
+
+#job scheduling
+gem 'rufus-scheduler'
