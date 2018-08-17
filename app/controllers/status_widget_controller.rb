@@ -26,6 +26,7 @@ class StatusWidgetController < ApplicationController
     rows = subway_table.search('tr')
 
     line = params[:id].upcase
+    #REFACTOR POTENTIAL. Case statement possible. Also another way after continuous monitor feature
     if line == "1" || line == "2" || line == "3"
       delay = rows[1].css('.subway_delays')
       render json: {currentlyDelayed: !delay.empty?}
