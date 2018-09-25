@@ -3,8 +3,6 @@ require 'nokogiri'
 require 'pry'
 
 def get_doc(index_url)
-  @index_url = index_url
-  binding.pry
   @doc = Nokogiri::HTML(open(index_url))
   @subway_table = @doc.css('#subwayDiv')[0].css('table')
 
@@ -16,7 +14,7 @@ def get_doc(index_url)
       p cells[0].css('img')[0].attributes["alt"].value
 
       #delay or not? delay would return an nokogiri::xml::element. not would be an empty array
-      p cells[1].css('.subway_delays')
+      cells[1].css('.subway_delays').empty? ? (p "Not Delayed") : (p "Delays")
     end
 
   end
