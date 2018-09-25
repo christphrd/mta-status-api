@@ -4,6 +4,7 @@ require 'pry'
 
 def get_doc(index_url)
   @index_url = index_url
+  binding.pry
   @doc = Nokogiri::HTML(open(index_url))
   @subway_table = @doc.css('#subwayDiv')[0].css('table')
 
