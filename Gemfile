@@ -49,3 +49,6 @@ gem 'nokogiri'
 
 #job scheduling
 gem 'rufus-scheduler'
+
+#updated for security
+gem "loofah", ">= 2.2.3"
